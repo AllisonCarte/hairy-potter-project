@@ -2,18 +2,14 @@
 import {makePottery} from './PotteryWheel.js'
 import {firePottery} from './kiln.js'
 import {toSellOrNotToSell} from './PotteryCatalog.js'
+import { PotteryList } from './PotteryList.js'
 
 // Make 5 pieces of pottery at the wheel
 let mug = makePottery('mug', 2, 7)
-console.log(mug)
-let vase = makePottery('vase', 4, 8)
-console.log(vase)
+let vase = makePottery('vase', 6, 8)
 let bowl = makePottery('bowl', 1, 6)
-console.log(bowl)
-let urn = makePottery('urn', 5, 10)
-console.log(urn)
+let urn = makePottery('urn', 7, 10)
 let jar = makePottery('jar', 4, 9)
-console.log(jar)
 // Fire each piece of pottery in the kiln
 let firedMug = firePottery(mug, 2201)
 let firedVase = firePottery(vase, 900)
@@ -22,12 +18,20 @@ let firedUrn = firePottery(urn, 1900)
 let firedJar = firePottery(jar, 2100)
 // Determine which ones should be sold, and their price
 // Fire each piece of pottery in the kiln
-let catMug = firePottery(mug)
-let catVase = firePottery(vase)
-let catBowl = firePottery(bowl)
-let catUrn = firePottery(urn)
-let catJar = firePottery(jar)
+let catMug = toSellOrNotToSell(firedMug)
+console.log(catMug)
+let catVase = toSellOrNotToSell(firedVase)
+console.log(catVase)
+let catBowl = toSellOrNotToSell(firedBowl)
+console.log(catBowl)
+let catUrn = toSellOrNotToSell(firedUrn)
+console.log(catUrn)
+let catJar = toSellOrNotToSell(firedJar)
+console.log(catJar)
+
+
 // Invoke the component function that renders the HTML list
+const parentHTMLElement = document.querySelector(".potteryList")
 
-
+parentHTMLElement.innerHTML = PotteryList()
 
