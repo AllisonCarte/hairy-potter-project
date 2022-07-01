@@ -19,15 +19,11 @@ let firedJar = firePottery(jar, 2100)
 // Determine which ones should be sold, and their price
 // Fire each piece of pottery in the kiln
 let catMug = toSellOrNotToSell(firedMug)
-console.log(catMug)
 let catVase = toSellOrNotToSell(firedVase)
-console.log(catVase)
 let catBowl = toSellOrNotToSell(firedBowl)
-console.log(catBowl)
 let catUrn = toSellOrNotToSell(firedUrn)
-console.log(catUrn)
 let catJar = toSellOrNotToSell(firedJar)
-console.log(catJar)
+
 
 
 // Invoke the component function that renders the HTML list
