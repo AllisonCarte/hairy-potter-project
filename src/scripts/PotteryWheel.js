@@ -1,13 +1,10 @@
-const potteryObject = {
-    id: 0
-}
+let id = 1;
 
-const makePottery = (shape, weight, height) => {
-   potteryObject.shape = shape,
-   potteryObject.weight = weight,
-   potteryObject.height = height,
-   potteryObject.id += 1
-   return potteryObject
+export const makePottery = (shape, weight, height) => {
+    let potteryObject = {}
+        potteryObject.shape = shape,
+        potteryObject.weight = weight,
+        potteryObject.height = height,
+        potteryObject.id = id++
+    return potteryObject
 }
-
-export {makePottery}
